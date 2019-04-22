@@ -16,6 +16,12 @@ def persons(request):
     persons = Person.objects.all()
     return render(request, "main/persons.html", {'persons': persons})
 
+def deleteperson(request, id):
+    print (id)
+    Person.objects.all().filter(pk=int(id)).delete()
+    persons = Person.objects.all()
+    return render(request, 'main/persons.html', {'persons': persons})
+
 
 
 
