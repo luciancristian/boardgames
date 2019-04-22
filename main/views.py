@@ -12,6 +12,9 @@ def formular_submit(request):
     return render(request, "main/raspunsformular.html",{'name':request.POST['nume'],'prenume':request.POST['prenume'],'trimite':request.POST['trimite']})
 # Create your views here.
 
+def persons(request):
+    persons = Person.objects.all()
+    return render(request, "main/persons.html", {'persons': persons})
 
 
 
